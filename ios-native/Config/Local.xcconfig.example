@@ -1,0 +1,23 @@
+// Copy this file to Config/Local.xcconfig, or generate it with
+// scripts/bootstrap-config.sh (which reads the bridge token and picks a
+// reachable host automatically).
+//
+// Local.xcconfig is gitignored because it holds your bridge token.
+//
+// Note the odd-looking `http:/$()/` — xcconfig treats `//` as a comment, so an
+// empty build-setting expansion is inserted between the slashes. Xcode expands
+// it back to `http://` at build time.
+//
+// Host: your Mac's LAN address, or its address on a personal VPN (for example
+// a Tailscale IPv4) if you want the phone to reach the bridge off your Wi-Fi.
+OS1_SERVER_URL = http:/$()/YOUR-MAC-HOST:8788
+
+// The bridge access token, created on first run of the bridge.
+OS1_ACCESS_TOKEN = YOUR-OS1-ACCESS-TOKEN
+
+// Your Apple Developer Team ID (10 characters). Leave blank for simulator-only
+// builds.
+DEVELOPMENT_TEAM =
+
+// Bundle identifier for the app. Use a reverse-DNS id you control.
+OS1_BUNDLE_ID = com.example.os1.native

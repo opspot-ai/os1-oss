@@ -1,0 +1,8 @@
+*.xcuserdata
+*.xcuserstate
+.DS_Store
+DerivedData/
+build/
+OS1Native.xcodeproj/
+Config/Local.xcconfig
+Config/GeneratedBridgeConfig.swift

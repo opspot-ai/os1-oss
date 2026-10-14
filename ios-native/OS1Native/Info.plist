@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDisplayName</key>
+	<string>OS1</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+		<dict>
+			<key>NSAllowsArbitraryLoads</key>
+			<true/>
+			<!--
+		  The bridge is reached over plain HTTP on a private network (LAN or a
+		  personal VPN such as Tailscale). If you want to narrow App Transport
+		  Security instead of allowing arbitrary loads, add an NSExceptionDomains
+		  dict here listing only your own bridge host, and set
+		  NSAllowsArbitraryLoads to false.
+		-->
+	</dict>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>OS1 connects to the private OS1 bridge running on your Mac.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>OS1 uses the microphone so you can talk to your agent by voice.</string>
+	<key>OS1AccessToken</key>
+	<string>$(OS1_ACCESS_TOKEN)</string>
+	<key>OS1ServerURL</key>
+	<string>$(OS1_SERVER_URL)</string>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>LaunchBackground</string>
+	</dict>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,15 @@
+{
+  "name": "os1-bridge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OS1 bridge and installable web app — sessions, tasks, files and voice for the agent stack on your Mac.",
+  "type": "module",
+  "scripts": {
+    "start": "node server/proxy.mjs",
+    "dev": "node server/proxy.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}

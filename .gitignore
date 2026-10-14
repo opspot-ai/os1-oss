@@ -1,0 +1,26 @@
+.DS_Store
+
+# Secrets and local configuration. Never commit these.
+.env
+.env.*
+!.env.example
+
+# Generated bridge config: holds the bridge URL and access token.
+ios-native/Config/Local.xcconfig
+ios-native/Config/GeneratedBridgeConfig.swift
+
+# Generated Xcode/build outputs.
+ios-native/OS1Native.xcodeproj/
+ios-native/DerivedData/
+ios-native/DerivedData-sim/
+ios-native/build/
+ios-native/*.xcworkspace
+ios-native/*.xcuserdata
+ios-native/*.xcuserstate
+
+# Node/runtime noise.
+pwa/node_modules/
+pwa/npm-debug.log*
+
+# Voice-note captures written at runtime.
+os1-captures/

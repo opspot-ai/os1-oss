@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
+  <title>OS1</title>
+
+  <meta name="theme-color" content="#C65A43" />
+  <meta name="description" content="OS1 thin client — sessions, tasks, and files for the agent stack on your Mac." />
+
+  <!-- iOS PWA / Add to Home Screen -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="OS1" />
+
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="167x167" href="/icons/apple-touch-icon-167.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152.png" />
+  <link rel="icon" type="image/png" href="/icons/icon-192.png" />
+
+  <link rel="stylesheet" href="/css/os1.css" />
+</head>
+<body>
+  <div id="app">
+    <div id="offline-banner" class="offline-banner hidden">Offline — showing last loaded data</div>
+
+    <header class="topbar">
+      <div class="wordmark">OS<sup>1</sup></div>
+      <div class="topbar-right">
+        <span id="conn-label">connecting…</span>
+        <span id="status-dot" class="status-dot" aria-label="connection status"></span>
+      </div>
+    </header>
+
+    <main id="view">
+      <div class="loading">
+        <div class="spinner"></div>
+        <div>Reaching your agent…</div>
+      </div>
+    </main>
+
+    <nav class="tabbar">
+      <button class="tab active" data-view="sessions"><span class="ico">◷</span>Sessions</button>
+      <button class="tab" data-view="kanban"><span class="ico">▦</span>Kanban</button>
+      <button class="tab" data-view="files"><span class="ico">⌗</span>Files</button>
+      <button class="tab" data-view="voice"><span class="ico">◉</span>Voice</button>
+    </nav>
+  </div>
+
+  <script src="/js/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch((e) => console.warn('SW registration failed', e));
+      });
+    }
+  </script>
+</body>
+</html>
